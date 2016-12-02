@@ -91,6 +91,12 @@
         }
     }
     
+    cell.longPressBlock = ^{
+        if([self.delegate respondsToSelector: @selector(choosePicView:cellLongPressedAtIndex:)]) {
+            [self.delegate choosePicView: self cellLongPressedAtIndex: indexPath.row];
+        }
+    };
+    
     return cell;
 }
 
@@ -126,6 +132,13 @@
     }
     [_imagesArray addObject: image];
     [_collectionView reloadData];;
+}
+
+- (void)addImagesFromArray:(NSArray<UIImage *> *)imagesArray
+{
+    for(UIImage *image in imagesArray) {
+        [self addImage: image];
+    }
 }
 
 - (void)removeImageAtIndex:(NSInteger)index

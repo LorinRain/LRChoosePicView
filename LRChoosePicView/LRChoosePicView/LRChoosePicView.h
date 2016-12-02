@@ -23,6 +23,7 @@
 
 - (void)choosePicView:(LRChoosePicView *)choosePicView cellClickedAtIndex:(NSInteger)index image:(UIImage *)image;  // index, 0 based
 - (void)choosePicViewAddButtonClicked:(LRChoosePicView *)choosePicView;
+- (void)choosePicView:(LRChoosePicView *)choosePicView cellLongPressedAtIndex:(NSInteger)index;  // index, 0 based
 
 @end
 
@@ -52,6 +53,14 @@
  @param image the image that added to the view
  */
 - (void)addImage:(UIImage *)image;
+
+
+/**
+ * Add images from an array
+
+ @param imagesArray array that contains images
+ */
+- (void)addImagesFromArray:(NSArray<UIImage *> *)imagesArray;
 
 
 /**

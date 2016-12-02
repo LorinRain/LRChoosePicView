@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "LRChoosePicView.h"
 
-@interface ViewController ()<LRChoosePicViewDelegate>
+@interface ViewController ()<LRChoosePicViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet LRChoosePicView *choosePicView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *chooseViewHeight;
@@ -22,21 +22,42 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
-    for(int i = 0;i < 8;i++) {
-        [_choosePicView addImage: [UIImage imageNamed: @"sensei"]];
-    }
+    [_choosePicView addImage: [UIImage imageNamed: @"sensei"]];
     _chooseViewHeight.constant = [_choosePicView actualHeight];
     _choosePicView.delegate = self;
 }
 
+#pragma mark - LRChoosePicView Delegate
 - (void)choosePicViewAddButtonClicked:(LRChoosePicView *)choosePicView
 {
-    NSLog(@"在这里面的新增");
+    // on add button action
+    NSLog(@"Add");
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.delegate = self;
+    [self presentViewController: imagePicker animated: YES completion:^{
+        
+    }];
 }
 
 - (void)choosePicView:(LRChoosePicView *)choosePicView cellClickedAtIndex:(NSInteger)index image:(UIImage *)image
 {
-    NSLog(@"在这里面浏览，很好啊");
+    // on image tapped action
+    NSLog(@"image");
+}
+
+- (void)choosePicView:(LRChoosePicView *)choosePicView cellLongPressedAtIndex:(NSInteger)index
+{
+    // on image long press action
+    NSLog(@"long press");
+}
+
+#pragma mark - UIImgaePickerController Delegate
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
+{
+    [picker dismissViewControllerAnimated: YES completion: nil];
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    [_choosePicView addImage: image];
+    _chooseViewHeight.constant = [_choosePicView actualHeight];
 }
 
 - (void)didReceiveMemoryWarning {

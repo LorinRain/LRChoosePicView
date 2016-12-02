@@ -17,6 +17,10 @@
         _imageView = [[UIImageView alloc] initWithFrame: CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame))];
         _imageView.backgroundColor = [UIColor redColor];
         [self addSubview: _imageView];
+        
+        // Add long press gesture
+        UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget: self action: @selector(cellLongPressAction:)];
+        [self addGestureRecognizer: longPress];
     }
     
     return self;
@@ -30,6 +34,17 @@
     } else {
         _imageView.image = image;
         _cellType = PicCellTypeImage;
+    }
+}
+
+- (void)cellLongPressAction:(UILongPressGestureRecognizer *)longPress
+{
+    if(_cellType == PicCellTypeImage) {
+        if(longPress.state == UIGestureRecognizerStateBegan) {
+            if(self.longPressBlock) {
+                self.longPressBlock();
+            }
+        }
     }
 }
 

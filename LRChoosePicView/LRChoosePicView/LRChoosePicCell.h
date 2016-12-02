@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+//@class LRChoosePicCell;
+typedef void (^CellLongPressBlcok) ();
+
 typedef NS_ENUM(NSInteger, PicCellType) {
     PicCellTypeImage = 0,      // normal picture
     PicCellTypeAdd             // the add icon
@@ -20,6 +23,7 @@ typedef NS_ENUM(NSInteger, PicCellType) {
 
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, assign, readonly) PicCellType cellType;
+@property (nonatomic, copy) CellLongPressBlcok longPressBlock;
 
 
 /**
