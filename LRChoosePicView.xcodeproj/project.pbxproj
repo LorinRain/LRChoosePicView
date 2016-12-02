@@ -13,6 +13,8 @@
 		B447C9E61D1BD23D00210321 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B447C9E41D1BD23D00210321 /* Main.storyboard */; };
 		B447C9E81D1BD23D00210321 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B447C9E71D1BD23D00210321 /* Assets.xcassets */; };
 		B447C9EB1D1BD23D00210321 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B447C9E91D1BD23D00210321 /* LaunchScreen.storyboard */; };
+		B447C9F51D1BD28600210321 /* LRChoosePicView.m in Sources */ = {isa = PBXBuildFile; fileRef = B447C9F41D1BD28600210321 /* LRChoosePicView.m */; };
+		B4D4BB941DE822C8002EF27E /* LRChoosePicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D4BB931DE822C8002EF27E /* LRChoosePicCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		B447C9E71D1BD23D00210321 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B447C9EA1D1BD23D00210321 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B447C9EC1D1BD23D00210321 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B447C9F31D1BD28600210321 /* LRChoosePicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRChoosePicView.h; sourceTree = "<group>"; };
+		B447C9F41D1BD28600210321 /* LRChoosePicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRChoosePicView.m; sourceTree = "<group>"; };
+		B4D4BB921DE822C8002EF27E /* LRChoosePicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRChoosePicCell.h; sourceTree = "<group>"; };
+		B4D4BB931DE822C8002EF27E /* LRChoosePicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRChoosePicCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 		B447C9DA1D1BD23D00210321 /* LRChoosePicView */ = {
 			isa = PBXGroup;
 			children = (
+				B447C9F21D1BD26A00210321 /* LRChoosePicView */,
 				B447C9DE1D1BD23D00210321 /* AppDelegate.h */,
 				B447C9DF1D1BD23D00210321 /* AppDelegate.m */,
 				B447C9E11D1BD23D00210321 /* ViewController.h */,
@@ -77,6 +84,17 @@
 				B447C9DC1D1BD23D00210321 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B447C9F21D1BD26A00210321 /* LRChoosePicView */ = {
+			isa = PBXGroup;
+			children = (
+				B447C9F31D1BD28600210321 /* LRChoosePicView.h */,
+				B447C9F41D1BD28600210321 /* LRChoosePicView.m */,
+				B4D4BB921DE822C8002EF27E /* LRChoosePicCell.h */,
+				B4D4BB931DE822C8002EF27E /* LRChoosePicCell.m */,
+			);
+			path = LRChoosePicView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -110,6 +128,7 @@
 				TargetAttributes = {
 					B447C9D71D1BD23D00210321 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 36S9UBN596;
 					};
 				};
 			};
@@ -149,8 +168,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4D4BB941DE822C8002EF27E /* LRChoosePicCell.m in Sources */,
 				B447C9E31D1BD23D00210321 /* ViewController.m in Sources */,
 				B447C9E01D1BD23D00210321 /* AppDelegate.m in Sources */,
+				B447C9F51D1BD28600210321 /* LRChoosePicView.m in Sources */,
 				B447C9DD1D1BD23D00210321 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,10 +284,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = LRChoosePicView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LorinRain.LRChoosePicView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -274,10 +298,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = LRChoosePicView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LorinRain.LRChoosePicView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -300,6 +327,7 @@
 				B447C9F11D1BD23D00210321 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

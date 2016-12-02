@@ -2,7 +2,7 @@
 //  AppDelegate.h
 //  LRChoosePicView
 //
-//  Created by 仁心医生 on 16/6/23.
+//  Created by Lorin on 16/6/23.
 //  Copyright © 2016年 LorinRain. All rights reserved.
 //
 

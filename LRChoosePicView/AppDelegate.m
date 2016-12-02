@@ -2,7 +2,7 @@
 //  AppDelegate.m
 //  LRChoosePicView
 //
-//  Created by 仁心医生 on 16/6/23.
+//  Created by Lorin on 16/6/23.
 //  Copyright © 2016年 LorinRain. All rights reserved.
 //
 
@@ -17,6 +17,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+//    UIView *statusBarView = [[UIView alloc] init];
+//    statusBarView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 20);
+//    statusBarView.backgroundColor = [UIColor purpleColor];
+//    [self.window.rootViewController.view addSubview: statusBarView];
+    
     return YES;
 }
 
